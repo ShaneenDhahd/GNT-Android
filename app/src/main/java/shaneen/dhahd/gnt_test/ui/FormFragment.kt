@@ -90,6 +90,8 @@ class FormFragment : Fragment() {
         formVM.apply {
             getGovs()
             governmentsObservable.observe(viewLifecycleOwner) { response ->
+                binding.governmentsProgressBar.visibility = View.GONE
+
                 when (response) {
                     is ResponseWrapper.Success -> {
                         governments = response.value
@@ -97,7 +99,6 @@ class FormFragment : Fragment() {
                             governmentsList.add(it.gov_name)
                             adapter.notifyDataSetChanged()
                         }
-                        binding.governmentsProgressBar.visibility = View.GONE
                     }
                     else -> {}
                 }
@@ -123,6 +124,7 @@ class FormFragment : Fragment() {
         val gps = "${UserStuff.lat},${UserStuff.long}"
         formVM.submit(name, username, selectedGovernment.toString(), comment, gps)
         formVM.formObservable.observe(viewLifecycleOwner) {response ->
+            binding.submitProgress.visibility = View.GONE
             when(response) {
                 is ResponseWrapper.Failure -> requireContext().toast(response.msg)
                 is ResponseWrapper.LocalFailure -> requireContext().toast("Connection Error!")
