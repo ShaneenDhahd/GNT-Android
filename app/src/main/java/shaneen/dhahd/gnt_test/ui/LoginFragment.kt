@@ -60,10 +60,10 @@ class LoginFragment : Fragment() {
                 password = passwordField.text.toString()
                 login()
             } else {
-                if (!emailField.isEmpty()) {
+                if (emailField.isEmpty()) {
                     emailField.error = "Email can not be empty"
                 }
-                if (!passwordField.isEmpty()) {
+                if (passwordField.isEmpty()) {
                     passwordField.error = "Password can not be empty"
                 }
             }
