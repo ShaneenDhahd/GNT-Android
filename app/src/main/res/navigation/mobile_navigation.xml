@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/landingFragment">
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="shaneen.dhahd.gnt_test.ui.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" />
+
+
+    <fragment
+        android:id="@+id/landingFragment"
+        android:name="shaneen.dhahd.gnt_test.ui.LandingFragment"
+        android:label="Landing"
+        tools:layout="@layout/fragment_landing" />
+
+
+    <fragment
+        android:id="@+id/navigation_form"
+        android:name="shaneen.dhahd.gnt_test.ui.FormFragment"
+        android:label="Form"
+        tools:layout="@layout/fragment_form" />
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="shaneen.dhahd.gnt_test.ui.ChooseLocationFragment"
+        android:label="Choose Location"
+        tools:layout="@layout/fragment_choose_location" />
+
+    <fragment
+        android:id="@+id/navigation_forms"
+        android:name="shaneen.dhahd.gnt_test.ui.FormsFragment"
+        android:label="Forms"
+        tools:layout="@layout/fragment_forms" />
+<fragment
+        android:id="@+id/navigation_user_map"
+        android:name="shaneen.dhahd.gnt_test.ui.UserMapFragment"
+        android:label="Forms"
+        tools:layout="@layout/fragment_user_map" />
+
+    <action
+        android:id="@+id/action_map_to_form"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popUpTo="@+id/navigation_form"/>
+</navigation>
