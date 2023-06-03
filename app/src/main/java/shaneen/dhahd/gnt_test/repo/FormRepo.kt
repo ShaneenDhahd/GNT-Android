@@ -16,4 +16,5 @@ class FormRepo @Inject constructor(private val api: GNTApi): BaseNetworkInteract
             gps = gps
         )
     }
+    fun getForms() = safeApiCall { api.getForms() }
 }

@@ -30,6 +30,12 @@
         android:label="Choose Location"
         tools:layout="@layout/fragment_choose_location" />
 
+    <fragment
+        android:id="@+id/navigation_forms"
+        android:name="shaneen.dhahd.gnt_test.ui.FormsFragment"
+        android:label="Forms"
+        tools:layout="@layout/fragment_choose_location" />
+
     <action
         android:id="@+id/action_map_to_form"
         app:enterAnim="@anim/nav_default_enter_anim"

@@ -15,6 +15,9 @@
     <item
         android:id="@+id/navigation_map"
         android:title="Choose Location" />
+<item
+        android:id="@+id/navigation_forms"
+        android:title="Forms" />
 
 
 </menu>

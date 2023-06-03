@@ -37,7 +37,7 @@ class LoginFragment : Fragment() {
                     login(emailField.text.toString(), passwordField.text.toString())
                     loginObservable.observe(viewLifecycleOwner) {
                         when(it){
-                            is ResponseWrapper.Success -> findNavController().navigateTo(R.id.navigation_form, true)
+                            is ResponseWrapper.Success -> findNavController().navigateTo(R.id.navigation_forms, true)
                             else -> {}
                         }
                     }

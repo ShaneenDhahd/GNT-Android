@@ -43,7 +43,7 @@ class LandingFragment : Fragment() {
                 when(it){
                     is ResponseWrapper.Failure -> findNavController().navigateTo(R.id.loginFragment, true)
                     is ResponseWrapper.LocalFailure -> requireContext().toast("No Connection")
-                    is ResponseWrapper.Success -> findNavController().navigateTo(R.id.navigation_form, true)
+                    is ResponseWrapper.Success -> findNavController().navigateTo(R.id.navigation_forms, true)
                     else -> {}
                 }
             }
