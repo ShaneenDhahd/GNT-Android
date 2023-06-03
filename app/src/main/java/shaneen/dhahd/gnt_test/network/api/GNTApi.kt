@@ -7,6 +7,7 @@ import retrofit2.http.Query
 import shaneen.dhahd.gnt_test.network.BaseUrls.GetGovernments
 import shaneen.dhahd.gnt_test.network.BaseUrls.ListData
 import shaneen.dhahd.gnt_test.network.BaseUrls.Login
+import shaneen.dhahd.gnt_test.network.BaseUrls.Refresh
 import shaneen.dhahd.gnt_test.network.BaseUrls.Submit
 import shaneen.dhahd.gnt_test.network.responses.FormModel
 import shaneen.dhahd.gnt_test.network.responses.FormsModel
@@ -18,6 +19,9 @@ interface GNTApi {
     @GET(GetGovernments)
     suspend fun getGovernments(
     ): Response<GovernmentsModel>
+    @POST(Refresh)
+    suspend fun refreshToken(
+    ): Response<LoginModel>
 
     @POST(Login)
     suspend fun login(
@@ -29,7 +33,7 @@ interface GNTApi {
     suspend fun getForms(
     ): Response<FormsModel>
 
-    @GET(Submit)
+    @POST(Submit)
     suspend fun submit(
         @Query("name") name: String,
         @Query("username") username: String,

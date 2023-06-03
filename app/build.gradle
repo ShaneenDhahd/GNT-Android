@@ -4,6 +4,7 @@ apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'io.realm.kotlin'
 
+
 android {
     namespace 'shaneen.dhahd.gnt_test'
     compileSdk 33
@@ -52,8 +53,9 @@ dependencies {
     implementation 'com.google.android.material:material:1.9.0'
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.maps.android:android-maps-utils:2.3.0'
+    implementation 'com.google.maps.android:maps-utils-ktx:3.4.0'
 
-    //realm
 
     implementation 'io.realm.kotlin:library-base:1.8.0'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'

@@ -3,5 +3,7 @@
     <string name="error_internet_failure">Please make sure you\'re connected to the internet.</string>
     <string name="error_service_failure">There was an issue connecting to the service, please try again later.</string>
     <string name="error_connection_issue">Connection Issue</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

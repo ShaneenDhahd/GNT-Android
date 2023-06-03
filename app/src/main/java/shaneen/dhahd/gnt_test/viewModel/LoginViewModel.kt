@@ -22,9 +22,9 @@ class LoginViewModel @Inject constructor(
     private val _loginObservable = MutableLiveData<ResponseWrapper<LoginModel>>()
     val loginObservable get() = _loginObservable.asLiveData()
     private val TAG = "TAG"
-    fun login() {
+    fun login(email: String, password: String) {
         viewModelScope.launch {
-            loginRepo.login().collect {
+            loginRepo.login(email, password).collect {
                 Log.d(TAG, "getDiscover: $it")
                 if (it is ResponseWrapper.Success)  {
                     preferencesManager.apply {
@@ -36,10 +36,17 @@ class LoginViewModel @Inject constructor(
             }
         }
     }
-    fun getForms() {
+    fun refreshToken() {
         viewModelScope.launch {
-            loginRepo.listData().collect {
+            loginRepo.refreshToken().collect {
                 Log.d(TAG, "getDiscover: $it")
+                if (it is ResponseWrapper.Success)  {
+                    preferencesManager.apply {
+                        saveLoginModel(it.value)
+                        saveToken(it.value.data.access_token)
+                    }
+                }
+                _loginObservable.postValue(it)
             }
         }
     }

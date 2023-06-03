@@ -5,10 +5,11 @@ import shaneen.dhahd.gnt_test.network.api.GNTApi
 import javax.inject.Inject
 
 class LoginRepo@Inject constructor(private val api: GNTApi): BaseNetworkInteractor() {
-    fun login() = safeApiCall {
-        api.login("test@giganet.iq", "QLoU7XYVcYUNOQIm8z")
+    fun login(email: String, password: String) = safeApiCall {
+        api.login(email, password)
     }
-    fun listData() = safeApiCall {
-        api.getForms()
+    fun refreshToken() = safeApiCall {
+        api.refreshToken()
     }
+
 }
