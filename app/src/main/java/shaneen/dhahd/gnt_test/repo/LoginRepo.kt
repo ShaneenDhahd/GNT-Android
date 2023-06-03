@@ -11,5 +11,8 @@ class LoginRepo@Inject constructor(private val api: GNTApi): BaseNetworkInteract
     fun refreshToken() = safeApiCall {
         api.refreshToken()
     }
+    fun logout() = safeApiCall {
+        api.logout()
+    }
 
 }

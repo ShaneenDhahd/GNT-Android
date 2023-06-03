@@ -31,6 +31,10 @@ class PreferencesManager @Inject constructor(@ApplicationContext context: Contex
         return sharedPreferences.getString("token", null)
     }
 
+    fun clearAll(){
+        sharedPreferences.edit().clear().apply()
+    }
+
     // Add any other necessary methods for your preferences
 }
 

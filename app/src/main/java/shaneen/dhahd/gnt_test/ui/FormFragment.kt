@@ -13,10 +13,7 @@ import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import shaneen.dhahd.gnt_test.R
 import shaneen.dhahd.gnt_test.databinding.FragmentFormBinding
-import shaneen.dhahd.gnt_test.ext.UserStuff
-import shaneen.dhahd.gnt_test.ext.isEmpty
-import shaneen.dhahd.gnt_test.ext.navigateTo
-import shaneen.dhahd.gnt_test.ext.toast
+import shaneen.dhahd.gnt_test.ext.*
 import shaneen.dhahd.gnt_test.network.responses.GovernmentsModel
 import shaneen.dhahd.gnt_test.network.wrappers.ResponseWrapper
 import shaneen.dhahd.gnt_test.viewModel.FormViewModel
@@ -64,6 +61,7 @@ class FormFragment : Fragment() {
                     binding.submitProgress.visibility = View.VISIBLE
                     submitForm()
                     clearFields()
+                    dismiss()
                 }
             }
         }

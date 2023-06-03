@@ -16,13 +16,15 @@ class FormsAdapter(
 
     inner class CardForm(itemView: View) : BaseViewHolder<DataX>(itemView) {
         private val binding = ItemFormBinding.bind(itemView)
+        @SuppressLint("SetTextI18n")
         override fun bind(item: DataX) {
             binding.formCard.setOnClickListener {
                 clickListener.invoke(item.gps)
             }
-            binding.formId.text = item.id.toString()
+            binding.formId.text = "#${item.id}"
             binding.formName.text = item.name
             binding.formComment.text = item.comment
+            binding.formUsername.text = "@${item.username}"
             binding.formDate.text = item.created_at.formatDate()
         }
     }

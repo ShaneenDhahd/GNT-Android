@@ -6,7 +6,7 @@
     app:startDestination="@+id/landingFragment">
 
     <fragment
-        android:id="@+id/loginFragment"
+        android:id="@+id/navigation_login"
         android:name="shaneen.dhahd.gnt_test.ui.LoginFragment"
         android:label="Login"
         tools:layout="@layout/fragment_login" />
@@ -34,7 +34,12 @@
         android:id="@+id/navigation_forms"
         android:name="shaneen.dhahd.gnt_test.ui.FormsFragment"
         android:label="Forms"
-        tools:layout="@layout/fragment_choose_location" />
+        tools:layout="@layout/fragment_forms" />
+<fragment
+        android:id="@+id/navigation_user_map"
+        android:name="shaneen.dhahd.gnt_test.ui.UserMapFragment"
+        android:label="Forms"
+        tools:layout="@layout/fragment_user_map" />
 
     <action
         android:id="@+id/action_map_to_form"
